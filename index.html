@@ -48,11 +48,11 @@
       text-align: left;
       line-height: 1.6;
     }
-    iframe {
-      margin-top: 15px;
-      width: 100%;
-      height: 180px;
-      border: none;
+    /* iframe musik disembunyiin */
+    #player {
+      display: none;
+      width: 0;
+      height: 0;
     }
     @keyframes fadeIn {
       from {opacity: 0; transform: scale(0.9);}
@@ -66,25 +66,34 @@
 </head>
 <body>
   <div class="box" id="content">
-    <img src="https://i.supaimg.com/9946dede-309e-4a23-80bf-15bd7cae93b9.png" alt="cute" />
+    <img src="https://i.supaimg.com/9946dede-309e-4a23-80bf-15bd7cae93b9.png" />
     <p>Boleh aku bilang sesuatu kekamu?</p>
     <button onclick="nextStep(1)">Boleh</button>
     <button id="noBtn" onmouseover="moveNoButton()" onclick="moveNoButton()">Engga usah</button>
+    <!-- musik player tersembunyi -->
+    <iframe id="player" src="" allow="autoplay"></iframe>
   </div>
 
   <script>
+    function playMusic() {
+      // mulai musik di background
+      document.getElementById('player').src = 
+        "https://www.youtube.com/embed/Q49pnA4jsp8?autoplay=1&loop=1&playlist=Q49pnA4jsp8";
+    }
+
     function nextStep(n) {
       const content = document.getElementById("content");
-
       if (n === 1) {
         content.innerHTML = `
-          <img src="https://i.supaimg.com/9946dede-309e-4a23-80bf-15bd7cae93b9.png" alt="cute" />
+          <img src="https://i.supaimg.com/9946dede-309e-4a23-80bf-15bd7cae93b9.png" />
           <p>Aku juga tau kok jawaban kamu sebenarnya, cuman aku ingin bilang kekamu..</p>
           <button onclick="nextStep(2)">Iyaa?</button>
+          <iframe id="player" src="" allow="autoplay"></iframe>
         `;
+        playMusic();
       } else if (n === 2) {
         content.innerHTML = `
-          <img src="https://i.supaimg.com/733dcef6-ef19-4aac-befa-0e90d3e57fbf.png" alt="confess" />
+          <img src="https://i.supaimg.com/733dcef6-ef19-4aac-befa-0e90d3e57fbf.png" />
           <div class="long-text">
             <p>
               Terimaa kasih sudah mau kenalan sama akuu, aku jujur bersyukur banget bisa kenal banget sama kamu, 
@@ -103,9 +112,23 @@
               dan terima kasihh..
             </p>
           </div>
-          <!-- Musik baru mulai di sini -->
-          <iframe id="player" src="https://www.youtube.com/embed/Q49pnA4jsp8?autoplay=1&loop=1&playlist=Q49pnA4jsp8" allow="autoplay"></iframe>
+          <iframe id="player" src="" allow="autoplay"></iframe>
         `;
+        playMusic();
+      }
+    }
+
+    function moveNoButton() {
+      const noBtn = document.getElementById("noBtn");
+      const x = Math.random() * 80;
+      const y = Math.random() * 80;
+      noBtn.style.position = "absolute";
+      noBtn.style.left = x + "%";
+      noBtn.style.top = y + "%";
+    }
+  </script>
+</body>
+</html>        `;
       }
     }
 
