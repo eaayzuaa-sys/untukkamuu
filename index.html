@@ -13,7 +13,6 @@
     }
     .container {
       margin-top: 50px;
-      position: relative;
     }
     button {
       padding: 10px 20px;
@@ -40,27 +39,14 @@
       width: 80%;
       max-width: 500px;
       box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-      animation: fadeIn 1s ease-in-out;
     }
     img {
       max-width: 200px;
       margin-top: 20px;
       border-radius: 15px;
-      opacity: 0;
-      transform: scale(0.8);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-    img.show {
-      opacity: 1;
-      transform: scale(1);
     }
     audio {
       margin-top: 20px;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -71,7 +57,7 @@
     <button id="noBtn" onmouseover="moveButton()">Engga usah</button>
     
     <div id="message" class="message-box" style="display:none;"></div>
-    <img id="cuteImg" src="" alt="Cute Image" style="display:none;">
+    <img id="cuteImg" src="https://ibb.co.com/676xbQ3v" alt="Cute Image" style="display:none;">
     <audio id="bgMusic" controls autoplay loop style="display:none;">
       <source src="https://p.scdn.co/mp3-preview/4a2e3c671f6d173adabf6d8fabc3f2ab8b0b7a2c?cid=YOUR_SPOTIFY_CLIENT_ID" type="audio/mpeg">
       Browser kamu tidak mendukung audio.
@@ -99,14 +85,11 @@
         msgBox.style.display = 'block';
         msgBox.innerHTML = "Aku juga tau kok jawaban kamu sebenarnya, cuman aku ingin bilang kekamu..<br><br><button onclick='nextStep(1)'>Iyaa?</button>";
         img.style.display = 'block';
-        img.src = "https://i.ibb.co.com/676xbQ3v"; // gambar pertama
-        setTimeout(() => img.classList.add("show"), 100);
+        img.src = "https://ibb.co.com/676xbQ3v"; // gambar pertama
       } 
       else if (step === 2) {
         msgBox.innerHTML = "Terimaa kasih sudah mau kenalan sama akuu, aku jujur bersyukur banget bisa kenal sama kamu, aku seberuntung itu bisa melihat kamu secara langsung di rl, bahkan kamu mau aja nemenin aku main bareng hehehe, makasii banyaakk yaaa, dan aku mau bilang sesuatu kekamu, ini sebenarnya pengen ku pendem aja karena mungkin aku sudah mengetahui jawabannyaa ╥﹏╥.<br><br>ternyata aku engga bisa selalu mendem perasaan aku maaf yahh aku pasti sangat merepotkanmu.. maaff bangett, aku minta maaf sedalam dalamnya, aku ingin jujur sama perasaanku cuman kadang aku ragu meski aku sudah tau.. baiklahh aku akan jujurr sekarang... <b>NORA SIHALOHO</b> aku sangat menyukaimu dan aku benar benar mencintaimu, maaff bangett aku merepotkanmu kali ini maaff yaa.. (◞‸◟ㆀ) terimaa kasihh yaa udah mau baca text panjang engga jelas gini huhuhuhu, sekali lagi aku minta maaf sedalam dalamnya, dan terima kasihh..";
-        img.src = "https://i.ibb.co.com/BKg3qCC6"; // gambar kedua
-        img.classList.remove("show"); 
-        setTimeout(() => img.classList.add("show"), 100); // efek animasi
+        img.src = "https://ibb.co.com/BKg3qCC6"; // gambar kedua
         music.style.display = 'block';
       }
     }
