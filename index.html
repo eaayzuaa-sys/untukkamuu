@@ -70,13 +70,13 @@
     <p>Boleh aku bilang sesuatu ke kamuu?</p>
     <button onclick="nextStep(1)">Boleh</button>
     <button id="noBtn" onmouseover="moveNoButton()" onclick="moveNoButton()">Engga usah</button>
-    <!-- musik player tersembunyi -->
-    <iframe id="player" src="" allow="autoplay"></iframe>
   </div>
+
+  <!-- musik player tersembunyi -->
+  <iframe id="player" src="" allow="autoplay"></iframe>
 
   <script>
     function playMusic() {
-      // mulai musik di background
       document.getElementById('player').src = 
         "https://www.youtube.com/embed/Q49pnA4jsp8?autoplay=1&loop=1&playlist=Q49pnA4jsp8";
     }
@@ -88,9 +88,7 @@
           <img src="https://i.supaimg.com/9946dede-309e-4a23-80bf-15bd7cae93b9.png" />
           <p>Aku juga tau kok jawaban kamu sebenarnya, cuman aku ingin bilang ke kamuu..</p>
           <button onclick="nextStep(2)">Iyaa?</button>
-          <iframe id="player" src="" allow="autoplay"></iframe>
         `;
-        playMusic();
       } else if (n === 2) {
         content.innerHTML = `
           <img src="https://i.supaimg.com/733dcef6-ef19-4aac-befa-0e90d3e57fbf.png" />
@@ -112,9 +110,8 @@
               dan terima kasihh..
             </p>
           </div>
-          <iframe id="player" src="" allow="autoplay"></iframe>
         `;
-        playMusic();
+        playMusic(); // musik mulai pas step terakhir
       }
     }
 
